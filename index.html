@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoEdge Pro - AI-Powered Crypto Trading Terminal | Professional Trading Bot</title>
     <meta name="description" content="The most advanced crypto trading terminal with AI-powered analysis. Trade on Binance, Coinbase, Kraken & more. Military-grade security. Verified safe by VirusTotal.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.svg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cryptoedgepro.de/">
+    <meta property="og:title" content="CryptoEdge Pro - AI-Powered Crypto Trading Terminal">
+    <meta property="og:description" content="Das fortschrittlichste Crypto-Trading-Terminal mit KI-Analyse. Trade auf Binance, Coinbase, Kraken & mehr. Militärische Sicherheit. VirusTotal-verifiziert.">
+    <meta property="og:image" content="https://cryptoedgepro.de/images/app-screenshot.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cryptoedgepro.de/">
+    <meta property="twitter:title" content="CryptoEdge Pro - AI-Powered Crypto Trading Terminal">
+    <meta property="twitter:description" content="Das fortschrittlichste Crypto-Trading-Terminal mit KI-Analyse. VirusTotal-verifiziert. 100% sicher.">
+    <meta property="twitter:image" content="https://cryptoedgepro.de/images/app-screenshot.jpg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
@@ -754,7 +780,26 @@
             </div>
             
             <div class="hero-visual">
-                <div class="hero-image-placeholder"></div>
+                <!-- App Screenshot -->
+                <img src="images/app-screenshot.jpg" 
+                     alt="CryptoEdge Pro Trading Terminal Settings"
+                     class="hero-screenshot"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                     style="width: 100%; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+                
+                <!-- Fallback Placeholder (shown if image doesn't exist yet) -->
+                <div class="hero-image-placeholder" style="display: none;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                        <div style="font-size: 1.25rem; margin-bottom: 0.5rem;">App Screenshot Coming Soon</div>
+                        <div style="font-size: 0.875rem; color: var(--text-dim);">
+                            Mach einen Screenshot der App und speichere ihn als:<br>
+                            <code style="background: rgba(99,102,241,0.1); padding: 0.25rem 0.5rem; border-radius: 4px; margin-top: 0.5rem; display: inline-block;">
+                                website/images/app-screenshot.png
+                            </code>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
