@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoEdge Pro - AI-Powered Crypto Trading Terminal</title>
+    <meta name="description" content="Professional crypto trading bot with AI analysis, automated strategies, and military-grade security. Trade smarter with CryptoEdge Pro.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0a0a0f;
+            --bg-card: #1a1a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0b0;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+            top: -200px;
+            right: -200px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.2); opacity: 0.15; }
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1.5rem 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+        }
+        
+        .features-list li::before {
+            content: '✓ ';
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Download Section */
+        .download {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .download-btn {
+            background: var(--bg-card);
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 250px;
+        }
+        
+        .download-btn:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .download-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .download-btn h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .version {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🚀 CryptoEdge Pro</h1>
+            <p class="subtitle">AI-Powered Crypto Trading Terminal for Serious Traders</p>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Automated strategies • Real-time AI analysis • Multi-exchange support<br>
+                Trade smarter. Sleep better.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">Download Now</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">15K+</div>
+                    <div class="stat-label">Trades Executed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Trading Modes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Market Monitoring</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Local & Secure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why CryptoEdge Pro?</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Analysis</h3>
+                <p>Advanced machine learning models (OpenAI GPT-4 + Claude) analyze market sentiment, news, and technical indicators in real-time to generate high-confidence trading signals.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Military-Grade Security</h3>
+                <p>AES-256 encryption. Master password protection. Zero cloud storage. Your API keys and trading data never leave your device.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>3 Trading Modes</h3>
+                <p>Manual (full control), Semi-Auto (AI suggestions), or Full-Auto (hands-free within your risk limits). You decide how much control to keep.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Advanced Analytics</h3>
+                <p>Track performance, win rate, best-performing pairs, and profit/loss over time. Beautiful charts and real-time dashboards.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Exchange Support</h3>
+                <p>Currently supports Binance, with Coinbase, Kraken, and Bybit coming soon. Trade across all your favorite exchanges from one interface.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Risk Management</h3>
+                <p>Automatic stop-loss and take-profit orders (OCO). Set max position size, daily loss limits, and leverage restrictions to protect your capital.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <span class="pricing-badge">🚀 FOUNDER EDITION</span>
+                <h3>Early Adopter</h3>
+                <div class="price">€199<span class="price-period"> once</span></div>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Limited to first 50 buyers</p>
+                
+                <ul class="features-list">
+                    <li>Lifetime license</li>
+                    <li>All future updates</li>
+                    <li>Priority support</li>
+                    <li>Community access</li>
+                    <li>AI strategy library</li>
+                </ul>
+                
+                <a href="#download" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Get Started</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <span class="pricing-badge">⭐ MOST POPULAR</span>
+                <h3>Professional</h3>
+                <div class="price">€299<span class="price-period"> once</span></div>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">For serious traders</p>
+                
+                <ul class="features-list">
+                    <li>Everything in Founder</li>
+                    <li>Advanced AI models</li>
+                    <li>Backtesting tools</li>
+                    <li>Custom strategies</li>
+                    <li>API access</li>
+                </ul>
+                
+                <a href="#download" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Get Started</a>
+            </div>
+            
+            <div class="pricing-card">
+                <span class="pricing-badge">💎 ENTERPRISE</span>
+                <h3>Pro Trader</h3>
+                <div class="price">€499<span class="price-period"> once</span></div>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Maximum features</p>
+                
+                <ul class="features-list">
+                    <li>Everything in Professional</li>
+                    <li>Multi-account management</li>
+                    <li>Portfolio rebalancing</li>
+                    <li>Tax reporting</li>
+                    <li>1-on-1 onboarding</li>
+                </ul>
+                
+                <a href="#download" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Get Started</a>
+            </div>
+        </div>
+        
+        <p style="text-align: center; color: var(--text-muted); margin-top: 3rem;">
+            💳 Secure payment via Stripe • 14-day money-back guarantee • No subscriptions
+        </p>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <h2 class="section-title">Download CryptoEdge Pro</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            Available for Windows and macOS. Linux support coming soon.
+        </p>
+        
+        <div class="download-buttons">
+            <div class="download-btn" onclick="downloadWindows()">
+                <div class="download-icon">💻</div>
+                <h3>Windows</h3>
+                <p class="version">Version 1.0.0 • 85 MB</p>
+            </div>
+            
+            <div class="download-btn" onclick="downloadMac()">
+                <div class="download-icon">🍎</div>
+                <h3>macOS</h3>
+                <p class="version">Version 1.0.0 • 90 MB</p>
+            </div>
+        </div>
+        
+        <p style="color: var(--text-muted); margin-top: 2rem; font-size: 0.875rem;">
+            System Requirements: Windows 10+ or macOS 11+, 4GB RAM, 200MB disk space
+        </p>
+    </section>
+    
+    <!-- Support Section -->
+    <section class="download" style="padding: 4rem 2rem; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);">
+        <h2 class="section-title" style="font-size: 2rem;">Need Help? 💬</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem;">
+            Questions about setup, features, or troubleshooting? We're here to help!
+        </p>
+        
+        <div style="text-align: center;">
+            <a href="mailto:cryptoedgepro.info@gmail.com" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                <span>📧</span>
+                <span>cryptoedgepro.info@gmail.com</span>
+            </a>
+        </div>
+        
+        <div style="max-width: 800px; margin: 3rem auto 0; text-align: left;">
+            <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.5rem;">Quick FAQs</h3>
+            
+            <div style="display: grid; gap: 1.5rem;">
+                <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--primary);">
+                    <strong style="color: var(--primary);">Q: Is my data safe?</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                        Yes! All data is encrypted with AES-256 and stored locally. Nothing is sent to any cloud server.
+                    </p>
+                </div>
+                
+                <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--primary);">
+                    <strong style="color: var(--primary);">Q: Do I need my own API keys?</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                        Yes. You'll need Binance API keys (for trading) and OpenAI or Claude API keys (for AI analysis). We guide you through the setup.
+                    </p>
+                </div>
+                
+                <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--primary);">
+                    <strong style="color: var(--primary);">Q: Can I lose money?</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                        Crypto trading carries risk. Start with small amounts, use the Manual mode first, and always set stop-loss limits. Never invest more than you can afford to lose.
+                    </p>
+                </div>
+                
+                <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 3px solid var(--primary);">
+                    <strong style="color: var(--primary);">Q: How do updates work?</strong>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 0;">
+                        The app checks for updates automatically. When a new version is available, you'll see a notification and can download it with one click.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 CryptoEdge Pro. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="impressum.html">Impressum</a> • 
+            <a href="mailto:cryptoedgepro.info@gmail.com">Contact</a> • 
+            <a href="#" onclick="alert('Privacy policy coming soon'); return false;">Privacy</a>
+        </p>
+    </footer>
+    
+    <script>
+        function downloadWindows() {
+            // Replace with your actual download URL
+            window.location.href = 'downloads/CryptoEdge-Pro-Setup-1.0.0.exe';
+        }
+        
+        function downloadMac() {
+            // Replace with your actual download URL
+            window.location.href = 'downloads/CryptoEdge-Pro-1.0.0.dmg';
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
