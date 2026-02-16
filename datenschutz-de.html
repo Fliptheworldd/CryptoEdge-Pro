@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - CryptoEdge Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #ffffff;
+            line-height: 1.8;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            padding: 3rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        h1 {
+            color: #6366f1;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        h2 {
+            color: #818cf8;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+        h3 {
+            color: #a0a0b0;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        p {
+            color: #a0a0b0;
+            margin-bottom: 1rem;
+        }
+        ul {
+            color: #a0a0b0;
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .highlight {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid #6366f1;
+            margin: 2rem 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Zurück zur Startseite</a>
+        
+        <h1>Datenschutzerklärung</h1>
+        <p><strong>Stand:</strong> 16. Februar 2026</p>
+
+        <div class="highlight">
+            <p><strong>Kurz & Knapp:</strong> CryptoEdge Pro ist 100% lokale Software. Deine API-Keys, Handelsdaten und persönlichen Informationen <strong>verlassen niemals deinen Computer</strong>. Wir sammeln, speichern und übertragen nichts. Diese Datenschutzerklärung existiert nur aus rechtlichen Gründen.</p>
+        </div>
+
+        <h2>1. Einleitung</h2>
+        <p>CryptoEdge Pro ("wir", "uns", "die Software") ist eine Desktop-Anwendung für Kryptowährungshandel mit KI-gestützter Analyse. Deine Privatsphäre ist uns wichtig.</p>
+        <p><strong>Grundprinzip:</strong> Alle Daten bleiben auf deinem Gerät. Wir haben keine Server, keinen Cloud-Speicher, kein Tracking.</p>
+
+        <h2>2. Welche Daten werden erhoben?</h2>
+        
+        <h3>2.1 Lokal auf deinem Computer gespeicherte Daten</h3>
+        <ul>
+            <li><strong>API-Schlüssel:</strong> Binance, OpenAI, Claude (verschlüsselt mit AES-256)</li>
+            <li><strong>Handelshistorie:</strong> Zeitstempel, Paar, Ein-/Ausstieg, PnL</li>
+            <li><strong>Einstellungen:</strong> Handelsmodus, Risikoparameter, Sprachauswahl</li>
+            <li><strong>Master-Passwort-Hash:</strong> SHA-256-Hash (nicht das Passwort selbst)</li>
+        </ul>
+        <p><strong>Speicherort:</strong> SQLite-Datenbank im lokalen App-Datenordner.</p>
+        <p><strong>Wir hochladen NIEMALS:</strong> Diese Daten auf unsere Server. Sie gehören dir, für immer.</p>
+
+        <h3>2.2 Daten, die wir NICHT erheben</h3>
+        <ul>
+            <li>❌ Keine Nutzungsstatistiken</li>
+            <li>❌ Keine Telemetrie</li>
+            <li>❌ Keine Absturzberichte (außer du sendest sie explizit)</li>
+            <li>❌ Keine IP-Adressen</li>
+            <li>❌ Keine Geräte-Fingerprints</li>
+            <li>❌ Keine Cookies (dies ist keine Web-App)</li>
+        </ul>
+
+        <h2>3. Wie werden Daten verwendet?</h2>
+        
+        <h3>3.1 API-Schlüssel</h3>
+        <p>Ausschließlich verwendet für:</p>
+        <ul>
+            <li>Verbindung zu Binance für Handelsoperationen</li>
+            <li>Senden von Marktanalyse-Anfragen an OpenAI/Claude</li>
+        </ul>
+        <p><strong>Niemals:</strong> Mit Dritten geteilt, geloggt oder an unsere Server übertragen.</p>
+
+        <h3>3.2 Handelsdaten</h3>
+        <p>Lokal gespeichert für:</p>
+        <ul>
+            <li>Anzeige deiner Handelshistorie</li>
+            <li>Berechnung von Performance-Metriken (Win-Rate, Profit-Faktor)</li>
+            <li>Erstellung von Analyse-Charts</li>
+        </ul>
+        <p><strong>Niemals:</strong> Hochgeladen, verkauft oder für Marketing verwendet.</p>
+
+        <h3>3.3 KI-Analyse</h3>
+        <p>Wenn du KI-Trading aktivierst:</p>
+        <ul>
+            <li>Marktdaten (Preis, Volumen, Indikatoren) werden an OpenAI/Claude APIs gesendet</li>
+            <li>Dies geschieht über <strong>deinen API-Key</strong> (direkte Verbindung)</li>
+            <li>Wir proxyen oder loggen diese Anfragen nicht</li>
+        </ul>
+        <p><strong>Deine Verantwortung:</strong> Lies die Datenschutzrichtlinien von OpenAI/Anthropic, wenn du ihre Dienste nutzt.</p>
+
+        <h2>4. Datenweitergabe & Dritte</h2>
+        
+        <h3>4.1 Mit wem wir Daten teilen</h3>
+        <p><strong>Kurze Antwort: Mit niemandem.</strong></p>
+        
+        <h3>4.2 Drittanbieter-Dienste, zu denen DU dich verbindest</h3>
+        <ul>
+            <li><strong>Binance:</strong> Deine API-Keys verbinden sich direkt. Siehe <a href="https://www.binance.com/de/privacy" target="_blank">Binance Datenschutz</a></li>
+            <li><strong>OpenAI:</strong> Dein API-Key verbindet sich direkt. Siehe <a href="https://openai.com/policies/privacy-policy" target="_blank">OpenAI Datenschutz</a></li>
+            <li><strong>Anthropic (Claude):</strong> Dein API-Key verbindet sich direkt. Siehe <a href="https://www.anthropic.com/privacy" target="_blank">Anthropic Datenschutz</a></li>
+        </ul>
+        <p><strong>Wichtig:</strong> Dies sind DEINE Konten. Wir sind nicht verantwortlich für deren Datenschutzpraktiken.</p>
+
+        <h2>5. Datensicherheit</h2>
+        
+        <h3>5.1 Verschlüsselung</h3>
+        <ul>
+            <li><strong>API-Schlüssel:</strong> AES-256-Verschlüsselung</li>
+            <li><strong>Master-Passwort:</strong> SHA-256-Hashing (Einweg, nicht umkehrbar)</li>
+            <li><strong>Datenbank:</strong> Gespeichert in OS-geschütztem App-Datenordner</li>
+        </ul>
+
+        <h3>5.2 Wogegen wir NICHT schützen können</h3>
+        <ul>
+            <li>❌ Malware auf deinem Computer (nutze Antivirus!)</li>
+            <li>❌ Physischer Zugriff auf dein entsperrtes Gerät</li>
+            <li>❌ Schwache Master-Passwörter (nutze 12+ Zeichen)</li>
+        </ul>
+        <p><strong>Best Practice:</strong> Aktiviere vollständige Festplattenverschlüsselung (BitLocker/FileVault).</p>
+
+        <h2>6. Deine Rechte (DSGVO-Konformität)</h2>
+        
+        <p>Gemäß EU-DSGVO hast du das Recht auf:</p>
+        <ul>
+            <li><strong>Zugang:</strong> Du kontrollierst alle Daten (sie sind auf deinem Computer)</li>
+            <li><strong>Löschung:</strong> Deinstalliere die App, lösche den Datenbankordner</li>
+            <li><strong>Export:</strong> Nutze "Export als CSV"-Funktion in der App</li>
+            <li><strong>Widerspruch:</strong> Kein Tracking, dem du widersprechen könntest (wir tracken nicht)</li>
+        </ul>
+        <p><strong>Verantwortlicher:</strong> DU bist der Verantwortliche. Wir sind der Software-Anbieter.</p>
+
+        <h2>7. Datenspeicherung</h2>
+        <ul>
+            <li><strong>Handelshistorie:</strong> Gespeichert bis du sie löschst (manuelle Aktion)</li>
+            <li><strong>API-Schlüssel:</strong> Gespeichert bis du sie löscht oder deinstallierst</li>
+            <li><strong>Bei Deinstallation:</strong> Du musst den Datenbankordner manuell löschen (siehe INSTALL.md)</li>
+        </ul>
+
+        <h2>8. Datenschutz für Kinder</h2>
+        <p>CryptoEdge Pro ist nicht für Nutzer unter 18 Jahren bestimmt. Wir sammeln wissentlich keine Daten von Kindern.</p>
+        <p><strong>Kryptowährungshandel ist riskant und nicht für Minderjährige geeignet.</strong></p>
+
+        <h2>9. Änderungen dieser Richtlinie</h2>
+        <p>Wir können diese Richtlinie aktualisieren, wenn:</p>
+        <ul>
+            <li>Neue Funktionen zusätzliche Daten erfordern (z.B. Cloud-Sync – nur Opt-in)</li>
+            <li>Sich rechtliche Anforderungen ändern</li>
+        </ul>
+        <p><strong>Du wirst benachrichtigt</strong> via In-App-Banner beim nächsten Start.</p>
+
+        <h2>10. Kontakt</h2>
+        <p>Fragen zum Datenschutz?</p>
+        <ul>
+            <li><strong>E-Mail:</strong> <a href="mailto:privacy@cryptoedgepro.com">privacy@cryptoedgepro.com</a></li>
+            <li><strong>Rechtliche Entität:</strong> Siehe <a href="impressum.html">Impressum</a></li>
+        </ul>
+
+        <h2>11. Rechtsgrundlage (DSGVO Art. 6)</h2>
+        <ul>
+            <li><strong>Vertragserfüllung:</strong> Verarbeitung notwendig zur Bereitstellung der Software</li>
+            <li><strong>Berechtigtes Interesse:</strong> Verbesserung der Software-Stabilität (Absturzberichte – Opt-in)</li>
+            <li><strong>Einwilligung:</strong> KI-Funktionen erfordern explizite API-Key-Eingabe</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Fazit:</strong> Dies ist lokale Software. Deine Daten gehören dir. Wir können nicht darauf zugreifen, selbst wenn wir wollten (und wir wollen nicht). Schlaf gut. 😴</p>
+        </div>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 1px solid rgba(99, 102, 241, 0.2);">
+        
+        <p style="text-align: center; color: #606070;">
+            <a href="index.html">Startseite</a> • 
+            <a href="impressum.html">Impressum</a> • 
+            <a href="agb-de.html">AGB</a>
+        </p>
+    </div>
+</body>
+</html>
