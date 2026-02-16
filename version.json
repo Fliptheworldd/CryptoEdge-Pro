@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "releaseDate": "2026-02-15",
+  "downloads": {
+    "windows": "https://YOUR-DOMAIN.com/downloads/CryptoEdge-Pro-Setup-1.0.0.exe",
+    "mac": "https://YOUR-DOMAIN.com/downloads/CryptoEdge-Pro-1.0.0.dmg"
+  },
+  "releaseNotes": "## CryptoEdge Pro 1.0.0 - Initial Release\n\n### Features\n- AI-powered trading signals (GPT-4 + Claude)\n- 3 trading modes: Manual, Semi-Auto, Full-Auto\n- Binance integration with OCO orders\n- Master password protection (AES-256)\n- Multi-language support (EN, DE, ES, FR, ZH)\n- Real-time analytics dashboard\n\n### Security\n- Military-grade encryption\n- 100% local data storage\n- No cloud dependencies\n\n### Supported Platforms\n- Windows 10+\n- macOS 11+",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-02-15",
+      "changes": [
+        "Initial release",
+        "AI trading bot with GPT-4 and Claude",
+        "Binance API integration",
+        "Master password system",
+        "Multi-language UI"
+      ]
+    }
+  ],
+  "minSystemRequirements": {
+    "windows": "Windows 10 or later",
+    "mac": "macOS 11 (Big Sur) or later",
+    "ram": "4 GB",
+    "disk": "200 MB"
+  }
+}
